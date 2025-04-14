@@ -5,6 +5,9 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <meta content="portfolio website " name="description">
     <meta content="Egoshenkov Dmitriy https://t.me/dmitriy_i0o" name="author">
+    <meta name="theme-color" content="#1d1e21">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Egoshenkov Dmitriy</title>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +16,17 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/bootstrap-grid.css" rel="stylesheet">
     <style>
+    /* Аварийные стили для мобильных устройств */
+    @media screen and (max-width: 767px) {
+        .card {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+        .light-mode .card {
+            background-color: rgba(210, 180, 140, 0.2) !important;
+            border: 1px solid rgba(139, 69, 19, 0.2) !important;
+        }
+    }
     </style>
 
 </head>
@@ -47,7 +61,7 @@
                         
                         <div class="row g-4">
                             <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card h-100">
+                                <div class="card h-100 course-card">
                                     <img src="img/scratch.svg" class="card-img-top" alt="Scratch">
                                     <div class="card-body">
                                         <h5 class="card-title">Scratch</h5>
@@ -56,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card h-100">
+                                <div class="card h-100 course-card">
                                     <img src="img/roblox.png" class="card-img-top" alt="Roblox Studio">
                                     <div class="card-body">
                                         <h5 class="card-title">Roblox Studio</h5>
@@ -65,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="card h-100">
+                                <div class="card h-100 course-card">
                                     <img src="img/web-dev.png" class="card-img-top" alt="Web Development">
                                     <div class="card-body">
                                         <h5 class="card-title">Создание сайтов / Web Development</h5>
@@ -74,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="card h-100">
+                                <div class="card h-100 course-card">
                                     <img src="img/go-backend.png" class="card-img-top" alt="Go Backend">
                                     <div class="card-body">
                                         <h5 class="card-title">Backend на Go</h5>
@@ -104,3 +118,4 @@
 <script src="js/load.js" type="text/javascript"></script>
 </body>
 </html>
+
