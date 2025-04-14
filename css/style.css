@@ -1937,60 +1937,62 @@ details .card-img-top {
     padding: 10px !important;
 }
 
-/* Адаптивные стили для деталей на мобильных устройствах */
-@media screen and (max-width: 768px) {
-    details {
-        padding: 30px 20px;
+/* Улучшенные стили для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .card, details .card {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        margin-bottom: 15px !important;
+        min-height: 250px !important;
+        width: 100% !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
     }
-    
-    details .card-title {
-        font-size: 0.9em !important;
-    }
-    
-    details .card-text {
-        font-size: 0.75em !important;
-    }
-    
-    details .card-img-top {
-        height: 110px !important;
-        width: 110px !important;
-    }
-    
-    details .card {
-        min-height: 200px;
-        padding: 20px;
-    }
-    
-    details .card-body {
-        padding: 15px;
-    }
-}
 
-@media screen and (max-width: 576px) {
-    details {
-        padding: 25px 15px;
+    .card-body, details .card-body {
+        padding: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    .card-img-top, details .card-img-top {
+        height: 80px !important;
+        width: 80px !important;
+        object-fit: contain !important;
+        margin: 0.5rem auto !important;
+        display: block !important;
     }
     
-    details .card-title {
-        font-size: 0.8em !important;
-    }
-    
-    details .card-text {
+    .card-title, details .card-title {
+        color: #fff !important;
         font-size: 0.7em !important;
+        margin-bottom: 0.8em !important;
+        text-align: center !important;
+        font-family: 'Press Start 2P', cursive !important;
     }
     
-    details .card-img-top {
-        height: 100px !important;
-        width: 100px !important;
+    .card-text, details .card-text {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 0.6em !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        font-family: 'Press Start 2P', cursive !important;
     }
     
-    details .card {
-        min-height: 180px;
-        padding: 15px;
+    .light-mode .card, .light-mode details .card {
+        background: rgba(210, 180, 140, 0.2) !important;
+        border: 1px solid rgba(139, 69, 19, 0.2) !important;
     }
     
-    details .card-body {
-        padding: 10px;
+    .light-mode .card-title, .light-mode details .card-title {
+        color: #8B4513 !important;
+    }
+    
+    .light-mode .card-text, .light-mode details .card-text {
+        color: rgba(139, 69, 19, 0.85) !important;
     }
 }
 
@@ -2010,6 +2012,45 @@ details .card-img-top {
         width: 95%;
         min-width: auto;
         margin: 15px auto;
+    }
+}
+
+/* Стили для карточек курсов */
+.course-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.light-mode .course-card {
+    background: rgba(210, 180, 140, 0.2);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+}
+
+/* Дополнительные стили для мобильных устройств */
+@media screen and (max-width: 767px) {
+    .course-card {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 20px !important;
+        margin-bottom: 15px !important;
+        min-height: 250px !important;
+    }
+    
+    .light-mode .course-card {
+        background: rgba(210, 180, 140, 0.2) !important;
+        border: 1px solid rgba(139, 69, 19, 0.2) !important;
     }
 }
 
