@@ -1,0 +1,2015 @@
+body {
+  transition: all 0.5s ease;
+  margin: 0 !important;
+  font-family: 'Press Start 2P', cursive !important;
+  letter-spacing: 2px !important;
+  color: #fff;
+  background: #1d1e21;
+  font-weight: 200;
+  margin: auto !important;
+  overflow-x: hidden;
+  padding-bottom: 80px !important;
+  padding-top: 20px !important;
+  font-size: 16px;
+}
+h1 {
+  text-align: center !important;
+  margin-top: 50px !important;
+  font-weight: 100 !important;
+  font-size: 3.5em;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 0.8em;
+  line-height: 1.4;
+}
+
+.center {
+  margin: auto !important;
+  text-align: center !important;
+  border-bottom-left-radius: 25px;
+}
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+}
+.spacing {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+.title-desc {
+  margin-top: 30px !important;
+  margin-bottom: 40px !important;
+  max-width: 600px !important;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Press Start 2P', cursive;
+}
+.resume-text {
+  position: static;
+  margin-top: -60px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: 10px;
+  text-align: right;
+  display: none;
+}
+.resume-text a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  padding: 12px;
+}
+.resume-text a img {
+  padding-right: 14px;
+}
+@media screen and (max-width: 576px) {
+  .resume-text a {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 575px) {
+  .resume-text a {
+    justify-content: flex-end;
+  }
+}
+.light-mode {
+  color: #8B4513 !important;
+  background: #F5F5DC !important;
+  padding-top: 20px !important;
+}
+.light-mode .resume-img {
+  background: url(../img/download-cloud.svg) no-repeat;
+}
+.light-mode .title-desc {
+  color: rgba(139, 69, 19, 0.85);
+  font-size: 1em;
+  line-height: 1.8;
+}
+.light-mode h1 {
+  color: #8B4513;
+  font-size: 3.5em;
+}
+
+.light-mode hr {
+  border-color: rgba(210, 180, 140, 0.3);
+}
+.light-mode .container {
+  background: rgba(245, 245, 220, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 20px;
+  backdrop-filter: blur(10px);
+}
+button {
+  background: url(../img/sun.svg) no-repeat;
+  color: transparent;
+  box-shadow: none;
+  border: none;
+  width: 75px;
+  height: 75px;
+  background-position: center;
+  position: absolute;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  top: 20px;
+  right: 20px;
+}
+
+/* Скрываем кнопку при ширине экрана меньше 800px */
+@media screen and (max-width: 800px) {
+  button {
+    display: none !important;
+  }
+}
+
+.light-mode button {
+  background: url(../img/moon.svg) no-repeat;
+  background-position: center;
+}
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Интерактивные элементы */
+a, button, [role="button"], details summary {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+a:focus, button:focus, [role="button"]:focus, details summary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.light-mode a:focus, .light-mode button:focus, 
+.light-mode [role="button"]:focus, .light-mode details summary:focus {
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.3);
+}
+
+/* Course Cards Styles */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    height: 100%;
+    min-height: 300px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1em;
+    margin-bottom: 1.2em;
+    line-height: 1.5;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.card-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85em;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 300;
+}
+
+/* Container and spacing adjustments */
+.container {
+    padding: 0 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+/* Row and column adjustments */
+.row {
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+.g-4 {
+    gap: 2rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1400px) {
+    .card-img-top {
+        height: 120px;
+        width: 120px;
+    }
+    
+    h1 {
+        font-size: 3.2em;
+    }
+    
+    .title-desc {
+        font-size: 0.95em;
+        max-width: 550px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .card-img-top {
+        height: 120px;
+    }
+    
+    .card {
+        min-height: 280px;
+    }
+    
+    .card-title {
+        font-size: 0.95em;
+    }
+    
+    .card-text {
+        font-size: 0.8em;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+    
+    .title-desc {
+        font-size: 0.9em;
+        max-width: 500px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .card-img-top {
+        height: 110px;
+    }
+    
+    .card {
+        min-height: 260px;
+    }
+    
+    .card-title {
+        font-size: 0.9em;
+    }
+    
+    .card-text {
+        font-size: 0.75em;
+    }
+    
+    h1 {
+        font-size: 2.8em;
+    }
+    
+    .title-desc {
+        font-size: 0.85em;
+        max-width: 450px !important;
+        line-height: 1.7;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    details {
+        padding: 30px 20px;
+    }
+    
+    .card-img-top {
+        height: 100px;
+    }
+    
+    .card {
+        min-height: 240px;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .card-title {
+        font-size: 0.85em;
+    }
+    
+    .card-text {
+        font-size: 0.7em;
+    }
+    
+    .g-4 {
+        gap: 1.5rem;
+    }
+    
+    .row {
+        margin: 0 -10px;
+    }
+    
+    .col-md-6, .col-lg-3 {
+        padding: 0 10px;
+    }
+    
+    button {
+        width: 60px;
+        height: 60px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        margin-top: 40px !important;
+    }
+    
+    .title-desc {
+        font-size: 0.8em;
+        max-width: 400px !important;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    details {
+        padding: 25px 15px;
+    }
+    
+    details summary {
+        padding: 14px 14px;
+        font-size: 0.85em;
+        min-width: 140px;
+        width: 90%;
+        margin: 12px auto 20px auto;
+    }
+    
+    .card-img-top {
+        height: 90px;
+    }
+    
+    .card {
+        min-height: 220px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .card-title {
+        font-size: 0.8em;
+    }
+    
+    .card-text {
+        font-size: 0.7em;
+        line-height: 1.5;
+    }
+    
+    .g-4 {
+        gap: 1rem;
+    }
+    
+    .row {
+        margin: 0 -5px;
+    }
+    
+    .col-md-6, .col-lg-3 {
+        padding: 0 5px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+    
+    button {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3;
+    }
+    
+    .title-desc {
+        font-size: 0.75em;
+        max-width: 350px !important;
+        line-height: 1.6;
+        margin-top: 20px !important;
+        margin-bottom: 30px !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    /* Стили для деталей и кнопки summary */
+    details {
+        padding: 20px 10px;
+        margin: 20px auto 40px auto;
+    }
+    
+    details summary {
+        padding: 12px 12px;
+        font-size: 0.8em;
+        min-width: 120px;
+        width: 95%;
+        margin: 10px auto 20px auto;
+    }
+    
+    details[open] summary {
+        margin-bottom: 40px;
+    }
+    
+    details .card {
+        min-height: 160px;
+        padding: 10px;
+    }
+    
+    details .card-body {
+        padding: 10px;
+    }
+    
+    details .card-title {
+        font-size: 0.75em !important;
+        margin-bottom: 12px !important;
+    }
+    
+    details .card-text {
+        font-size: 0.65em !important;
+        line-height: 1.5 !important;
+    }
+    
+    details .card-img-top {
+        height: 90px !important;
+        width: 90px !important;
+        padding: 8px !important;
+        margin: 5px auto 10px auto !important;
+    }
+    
+    details hr {
+        margin: 15px auto 20px auto !important;
+    }
+    
+    /* Общие стили для сайта */
+    .card-img-top {
+        height: 85px;
+    }
+    
+    .card-title {
+        font-size: 0.75em;
+    }
+    
+    .card-text {
+        font-size: 0.65em;
+        line-height: 1.5;
+    }
+    
+    .container {
+        padding: 0 8px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-top: 25px !important;
+        line-height: 1.4;
+    }
+    
+    .title-desc {
+        font-size: 0.7em;
+        max-width: 320px !important;
+        line-height: 1.5;
+        margin: 15px auto 25px auto !important;
+    }
+    
+    img[src="img/i.jpg"] {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* Стили для деталей и кнопки summary */
+    details {
+        padding: 15px 8px;
+        margin: 15px auto 30px auto;
+    }
+    
+    details summary {
+        padding: 10px 10px;
+        font-size: 0.75em;
+        min-width: 100px;
+        width: 95%;
+        margin: 8px auto 15px auto;
+    }
+    
+    details .card {
+        min-height: 150px;
+        padding: 8px;
+    }
+    
+    details .card-body {
+        padding: 8px;
+    }
+    
+    details .card-title {
+        font-size: 0.7em !important;
+        margin-bottom: 10px !important;
+    }
+    
+    details .card-text {
+        font-size: 0.6em !important;
+        line-height: 1.4 !important;
+    }
+    
+    details .card-img-top {
+        height: 80px !important;
+        width: 80px !important;
+        padding: 5px !important;
+        margin: 3px auto 8px auto !important;
+    }
+    
+    details hr {
+        margin: 10px auto 15px auto !important;
+    }
+    
+    /* Общие стили для сайта */
+    h1 {
+        font-size: 1.6em;
+        margin-top: 20px !important;
+        margin-bottom: 15px !important;
+        line-height: 1.3;
+    }
+    
+    .title-desc {
+        font-size: 0.65em;
+        max-width: 280px !important;
+        line-height: 1.4;
+        margin: 10px auto 20px auto !important;
+    }
+    
+    .card-title {
+        font-size: 0.7em;
+    }
+    
+    .card-text {
+        font-size: 0.6em;
+    }
+}
+
+img[src="img/i.jpg"] {
+  border-radius: 30px;
+}
+
+img[src="img/pp34_min_70px-removebg-preview.jpg"] {
+    height: 100px !important;
+    width: 200px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 5px auto !important;
+}
+
+hr {
+  margin: 10px !important;
+}
+
+@media screen and (max-width: 511px) {
+    .vertical-center {
+        min-height: auto;
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .spacing {
+        margin-top: 2vh;
+        margin-bottom: 5vh;
+        text-align: center;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 10px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .row {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col-10, 
+    .col-sm-10, 
+    .col-lg-5, 
+    .col-md-5,
+    .col-15,
+    .col-sm-15,
+    .col-lg-12,
+    .col-md-12 {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+        margin: 0 auto;
+        text-align: center;
+        float: none;
+    }
+
+    img[src="img/i.jpg"] {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 1.2em;
+        margin: 15px auto !important;
+        padding: 0 10px;
+        word-wrap: break-word;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .title-desc {
+        font-size: 0.6em;
+        max-width: 90% !important;
+        margin: 10px auto !important;
+        padding: 0 5px;
+        word-wrap: break-word;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    details {
+        width: 95%;
+        padding: 10px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .card {
+        width: 100% !important;
+        margin: 5px 0 !important;
+        min-height: auto;
+    }
+
+    .card-body {
+        padding: 8px;
+    }
+
+    .g-4 {
+        gap: 0.5rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .telegram-icon {
+        height: 80px !important;
+        width: 160px !important;
+        margin: 3px auto !important;
+    }
+
+    details .container {
+        padding: 0 5px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center;
+    }
+
+    details .row {
+        gap: 8px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    details .card {
+        padding: 8px;
+        margin: 3px auto !important;
+        float: none;
+    }
+
+    details .card-img-top {
+        height: 80px !important;
+        width: 80px !important;
+        padding: 5px;
+        margin: 0 auto;
+    }
+
+    details .card-title {
+        font-size: 0.7em;
+        margin-bottom: 0.3em;
+    }
+
+    details .card-text {
+        font-size: 0.6em;
+    }
+
+    details hr {
+        margin: 5px auto !important;
+    }
+    
+    details br {
+        display: none;
+    }
+}
+
+/* Utility classes for better centering */
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* Improved social-list styling for better centering */
+#social-list {
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 40px auto !important;
+    width: auto !important; /* Change to auto for better centering */
+    text-align: center;
+    position: relative;
+    clear: both;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    padding: 0 !important;
+}
+
+#social-list a {
+    position: relative;
+    height: 160px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    perspective: 1000px;
+    margin: 0 auto !important;
+    float: none !important;
+    padding: 0 !important;
+}
+
+/* Ensure images are centered properly */
+#social-list img {
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Mobile specific fixes */
+@media screen and (max-width: 767px) {
+    #social-list {
+        position: relative !important; 
+        margin: 20px auto 30px auto !important;
+        width: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        float: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transform: translateX(0) !important;
+        padding: 0 !important;
+    }
+    
+    #social-list a {
+        margin: 0 auto !important;
+        float: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    #social-list img {
+        width: 140px !important;
+        height: 140px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 511px) {
+    #social-list {
+        margin: 15px auto 25px auto !important;
+    }
+    
+    #social-list a {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    #social-list img {
+        width: 140px !important;
+        height: 140px !important;
+    }
+    
+    /* Special sizes for numbered images in mobile */
+    #social-list img[src*="1.png"], 
+    #social-list img[src*="2.png"],
+    #social-list img[src*="3.png"],
+    #social-list img[src*="4.png"],
+    #social-list img[src*="5.png"],
+    #social-list img[src*="6.png"],
+    #social-list img[src*="7.png"] {
+        height: 150px !important;
+        width: 150px !important;
+        padding: 3px !important;
+    }
+}
+
+/* Light mode adjustments */
+.light-mode .card {
+    background: rgba(29, 30, 33, 0.1);
+}
+
+.light-mode .card-title {
+    color: #8B4513;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.light-mode .card-text {
+    color: rgba(139, 69, 19, 0.85);
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+
+/* Details tag styles */
+details {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 50px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для открытого details */
+details[open] summary {
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Улучшение внешнего вида контейнера внутри details */
+details .container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 20px auto 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+details hr {
+    width: 80%;
+    margin: 25px auto 30px auto !important;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 1px;
+}
+
+.light-mode details hr {
+    border-color: rgba(139, 69, 19, 0.2);
+}
+
+details br {
+    display: block;
+    content: "";
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+    details .row {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    details .col-12,
+    details .col-sm-6,
+    details .col-lg-3 {
+        max-width: 400px !important;
+    }
+    
+    details .card {
+        max-width: 400px !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    details .col-12,
+    details .col-sm-6,
+    details .col-lg-3 {
+        max-width: 100% !important;
+    }
+    
+    details .card {
+        max-width: 100% !important;
+    }
+}
+
+/* Light mode adjustments */
+.light-mode details {
+    background: rgba(29, 30, 33, 0.05);
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    box-shadow: 0 8px 20px rgba(139, 69, 19, 0.05);
+}
+
+.light-mode details .card {
+    background: rgba(29, 30, 33, 0.08);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.05);
+}
+
+.light-mode details .card:hover {
+    background: rgba(29, 30, 33, 0.12);
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.1);
+}
+
+.light-mode details .card-title {
+    color: #8B4513;
+    font-weight: 500;
+}
+
+.light-mode details .card-text {
+    color: rgba(139, 69, 19, 0.85);
+}
+
+.light-mode details[open] summary {
+    margin-bottom: 50px;
+    background: rgba(29, 30, 33, 0.15);
+    border-color: rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+}
+
+details summary {
+    cursor: pointer;
+    position: relative;
+    padding: 20px 30px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px auto 40px auto;
+    text-align: center;
+    width: 70%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+details summary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--wave-color, rgba(255,255,255,0.2)) 0%, rgba(255,255,255,0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+details summary:hover::before,
+details summary:active::before,
+details summary[data-touch="true"]::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+details summary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+details summary:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Light mode adjustments for summary button */
+.light-mode details summary {
+    background: rgba(29, 30, 33, 0.1);
+    color: #8B4513;
+    border: 2px solid rgba(29, 30, 33, 0.2);
+    box-shadow: 0 4px 10px rgba(139, 69, 19, 0.1);
+    font-size: 1em;
+}
+
+.light-mode details summary::before {
+    background: radial-gradient(circle, var(--wave-color, rgba(139, 69, 19, 0.2)) 0%, rgba(139, 69, 19, 0) 70%);
+}
+
+.light-mode details summary:hover {
+    background: rgba(29, 30, 33, 0.15);
+    box-shadow: 0 6px 15px rgba(139, 69, 19, 0.15);
+}
+
+.light-mode details[open] summary {
+    background: rgba(29, 30, 33, 0.15);
+    border-color: rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+}
+
+/* Удаляем стили для стрелочки */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary::after {
+    display: none;
+}
+
+details[open] summary::after {
+    display: none;
+}
+
+/* Адаптивные стили для разных размеров экрана */
+@media screen and (max-width: 1200px) {
+    details summary {
+        padding: 18px 25px;
+        font-size: 0.9em;
+        min-width: 200px;
+        width: 75%;
+        margin: 15px auto 35px auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    details summary {
+        padding: 16px 20px;
+        font-size: 0.85em;
+        min-width: 180px;
+        width: 80%;
+        margin: 15px auto 30px auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    details summary {
+        padding: 15px 16px;
+        font-size: 0.8em;
+        min-width: 160px;
+        width: 85%;
+        margin: 15px auto 25px auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    details summary {
+        padding: 14px 14px;
+        font-size: 0.75em;
+        min-width: 140px;
+        width: 90%;
+        margin: 12px auto 20px auto;
+    }
+}
+
+/* Адаптивные стили для маленьких мобильных устройств */
+@media screen and (max-width: 380px) {
+    details summary {
+        padding: 12px 12px;
+        font-size: 0.8em;
+        min-width: 120px;
+        width: 95%;
+        margin: 10px auto 20px auto;
+    }
+    
+    .card-img-top {
+        height: 80px;
+    }
+    
+    .card-title {
+        font-size: 0.75em;
+    }
+    
+    .card-text {
+        font-size: 0.65em;
+    }
+    
+    .container {
+        padding: 0 8px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-top: 25px !important;
+        line-height: 1.4;
+    }
+    
+    .title-desc {
+        font-size: 0.7em;
+        max-width: 320px !important;
+        line-height: 1.5;
+        margin: 15px auto 25px auto !important;
+    }
+    
+    img[src="img/i.jpg"] {
+        max-width: 90%;
+        height: auto;
+    }
+    
+    button {
+        width: 40px;
+        height: 40px;
+        top: 8px;
+        right: 8px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    details summary {
+        padding: 10px 10px;
+        font-size: 0.75em;
+        min-width: 100px;
+        width: 95%;
+        margin: 8px auto 15px auto;
+    }
+    
+    button {
+        width: 35px;
+        height: 35px;
+        top: 5px;
+        right: 5px;
+    }
+
+}
+
+/* Tablet-specific styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+        max-width: 90%;
+    }
+
+    .row {
+        margin: 0 -15px;
+    }
+
+    .col-md-6, .col-lg-3 {
+        padding: 0 15px;
+    }
+
+    .card {
+        min-height: 280px;
+        margin-bottom: 20px;
+    }
+
+    .card-img-top {
+        height: 120px;
+        width: 120px;
+        padding: 15px;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 0.85em;
+        margin-bottom: 1.2em;
+    }
+
+    .card-text {
+        font-size: 0.75em;
+        line-height: 1.6;
+    }
+
+    h1 {
+        font-size: 2.8em;
+        margin-top: 40px !important;
+    }
+
+    .title-desc {
+        font-size: 0.85em;
+        max-width: 600px !important;
+        margin: 25px auto 30px auto !important;
+        line-height: 1.7;
+    }
+
+    img[src="img/i.jpg"] {
+        max-width: 70%;
+        height: auto;
+    }
+
+    details {
+        padding: 30px;
+    }
+
+    details summary {
+        padding: 15px 25px;
+        font-size: 0.85em;
+        min-width: 200px;
+        margin: 15px auto 30px auto;
+    }
+
+    .g-4 {
+        gap: 2rem;
+    }
+
+}
+
+/* Landscape tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .container {
+        max-width: 95%;
+    }
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .col-md-6, .col-lg-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .card {
+        min-height: 260px;
+    }
+
+    img[src="img/i.jpg"] {
+        max-width: 50%;
+    }
+
+}
+
+.social-icon {
+    transition: opacity 0.5s ease;
+}
+
+/* Animation styles for social icons */
+#social-list img {
+    height: 130px !important;
+    width: 130px !important;
+    object-fit: contain !important;
+    padding: 5px !important;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+/* Special sizes for numbered images */
+#social-list img[src*="1.png"], 
+#social-list img[src*="2.png"],
+#social-list img[src*="3.png"],
+#social-list img[src*="4.png"],
+#social-list img[src*="5.png"],
+#social-list img[src*="6.png"],
+#social-list img[src*="7.png"] {
+    height: 150px !important;
+    width: 150px !important;
+    padding: 3px !important;
+}
+
+/* Flip animation */
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: perspective(400px) rotateY(180deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: perspective(400px) rotateY(360deg);
+        opacity: 1;
+    }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Rotate animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Wave animation */
+@keyframes wave {
+    0% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    50% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.flip-animation {
+    animation: flip 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.bounce-animation {
+    animation: bounce 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.rotate-animation {
+    animation: rotate 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.wave-animation {
+    animation: wave 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Glitch animation */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    10% {
+        transform: translate(-5px, 5px);
+        opacity: 0.9;
+    }
+    20% {
+        transform: translate(-10px, -10px);
+        opacity: 0.8;
+    }
+    30% {
+        transform: translate(10px, 10px);
+        opacity: 0.7;
+    }
+    40% {
+        transform: translate(5px, -5px);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-5px, 10px);
+        opacity: 0.5;
+    }
+    60% {
+        transform: translate(-10px);
+        opacity: 0.6;
+    }
+    70% {
+        transform: translate(10px);
+        opacity: 0.7;
+    }
+    80% {
+        transform: translate(-5px, -5px);
+        opacity: 0.8;
+    }
+    90% {
+        transform: translate(5px, 5px);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        filter: brightness(1.5) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+}
+
+/* 3D Cube animation */
+@keyframes cube {
+    0% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+        opacity: 1;
+    }
+    25% {
+        transform: rotateX(90deg) rotateY(0) rotateZ(0);
+        opacity: 0.7;
+    }
+    50% {
+        transform: rotateX(90deg) rotateY(90deg) rotateZ(0);
+        opacity: 0.5;
+    }
+    75% {
+        transform: rotateX(0) rotateY(90deg) rotateZ(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+        opacity: 1;
+    }
+
+}
+
+.glitch-animation {
+    animation: glitch 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform-origin: center;
+    position: relative;
+}
+
+.pulse-animation {
+    animation: pulse 1s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform-origin: center;
+    position: relative;
+}
+
+.cube-animation {
+    animation: cube 1.5s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform-origin: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+/* Specific adjustments for 360px screen width */
+@media screen and (max-width: 360px) {
+    .card.h-100 {
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        min-height: auto !important;
+    }
+    
+    .card-body {
+        padding: 6px !important;
+        min-height: auto !important;
+    }
+    
+    .card-title {
+        font-size: 0.55em !important;
+        margin-bottom: 0.5em !important;
+    }
+    
+    .card-text {
+        font-size: 0.5em !important;
+        line-height: 1.3 !important;
+    }
+    
+    .card-img-top {
+        height: 60px !important;
+        width: 60px !important;
+        padding: 5px !important;
+    }
+    
+    details .card {
+        padding: 8px !important;
+    }
+    
+    .container.mt-5 {
+        padding: 0 !important;
+    }
+    
+    .row.g-4 {
+        gap: 0.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    details .row {
+        flex-direction: column !important;
+    }
+    
+    details .col-md-6, 
+    details .col-lg-3,
+    details .col-12,
+    details .col-sm-6 {
+        width: 100% !important;
+        max-width: 90% !important;
+        margin: 5px auto !important;
+    }
+}
+
+/* Proper responsive styles for 579px-767px screens */
+@media screen and (min-width: 579px) and (max-width: 767px) {
+    /* Details and cards layout */
+    details {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 40px auto;
+        padding: 15px;
+    }
+    
+    details .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    details .col-12,
+    details .col-sm-6,
+    details .col-md-6,
+    details .col-lg-3 {
+        width: 90% !important;
+        max-width: 90% !important;
+        flex: 0 0 90% !important;
+        margin-bottom: 15px !important;
+    }
+    
+    details .card {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Fix for Telegram button positioning */
+    #social-list {
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 20px auto !important;
+    }
+    
+    #social-list a {
+        margin: 0 auto !important;
+        display: block !important;
+        float: none !important;
+        position: static !important;
+    }
+}
+
+/* Adjustments for tablet-portrait (576px-767px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    details .container {
+        max-width: 90% !important;
+    }
+    
+    details .card {
+        width: 70% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    details .card-body {
+        padding: 10px !important;
+    }
+    
+    .card-title {
+        font-size: 0.7em !important;
+        margin-bottom: 0.7em !important;
+    }
+    
+    .card-text {
+        font-size: 0.6em !important;
+        line-height: 1.4 !important;
+    }
+    
+    .card-img-top {
+        height: 80px !important;
+        width: 80px !important;
+        padding: 7px !important;
+    }
+    
+    details .col-12, 
+    details .col-sm-6,
+    details .col-md-6,
+    details .col-lg-3 {
+        padding: 0 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Center Telegram button */
+    #social-list {
+        width: 100px !important;
+        margin: 20px auto !important;
+        padding: 0 !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        float: none !important;
+        clear: both !important;
+        display: block !important;
+    }
+    
+    #social-list a {
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+/* Specifically target 768px screen width */
+@media screen and (width: 768px) {
+    #social-list {
+        position: relative !important; 
+        margin: 20px auto 30px auto !important;
+        width: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        float: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    #social-list a {
+        margin: 0 auto !important;
+        float: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 150px !important;
+        height: 150px !important;
+    }
+    
+    #social-list img {
+        width: 140px !important;
+        height: 140px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+    
+    .container > .row > .col-12.d-flex {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+}
+
+/* Specifically target 769px screen width */
+@media screen and (width: 769px) {
+    #social-list {
+        position: relative !important; 
+        margin: 20px auto 30px auto !important;
+        width: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        float: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    #social-list a {
+        margin: 0 auto !important;
+        float: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .container > .row > .col-12.d-flex {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
+
+/* Universal centering for all social-list containers */
+.container > .row > .col-12.d-flex {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    float: none !important;
+    position: static !important;
+    text-align: center !important;
+}
+
+/* Additional fix for smaller screens */
+@media screen and (max-width: 768px) {
+    /* Force center alignment for mobile views */
+    #social-list, #social-list a, #social-list img {
+        position: static !important;
+        display: block !important;
+        margin: 0 auto !important;
+        float: none !important;
+        text-align: center !important;
+    }
+    
+    /* Ensure parent containers are not interfering */
+    .container, .row, .col-12 {
+        overflow: visible !important;
+        position: static !important;
+    }
+    
+    /* Reset any transforms or absolute positioning */
+    #social-list {
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+    }
+    
+    /* Make sure images have appropriate centering */
+    #social-list img {
+        object-position: center !important;
+    }
+}
+
+/* Стили для компонентов внутри details */
+details .row {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+}
+
+details .col-12,
+details .col-sm-6,
+details .col-lg-3 {
+    width: 100% !important;
+    max-width: 450px !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+}
+
+details .card {
+    width: 100% !important;
+    max-width: 450px !important;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+details .card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+details .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+details .card-title {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 1em !important;
+    margin-bottom: 20px !important;
+    color: #fff;
+    font-weight: 500;
+}
+
+details .card-text {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 0.85em !important;
+    line-height: 1.7 !important;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+details .card-img-top {
+    height: 130px !important;
+    width: 130px !important;
+    object-fit: contain !important;
+    margin: 10px auto 15px auto !important;
+    padding: 10px !important;
+}
+
+/* Адаптивные стили для деталей на мобильных устройствах */
+@media screen and (max-width: 768px) {
+    details {
+        padding: 30px 20px;
+    }
+    
+    details .card-title {
+        font-size: 0.9em !important;
+    }
+    
+    details .card-text {
+        font-size: 0.75em !important;
+    }
+    
+    details .card-img-top {
+        height: 110px !important;
+        width: 110px !important;
+    }
+    
+    details .card {
+        min-height: 200px;
+        padding: 20px;
+    }
+    
+    details .card-body {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    details {
+        padding: 25px 15px;
+    }
+    
+    details .card-title {
+        font-size: 0.8em !important;
+    }
+    
+    details .card-text {
+        font-size: 0.7em !important;
+    }
+    
+    details .card-img-top {
+        height: 100px !important;
+        width: 100px !important;
+    }
+    
+    details .card {
+        min-height: 180px;
+        padding: 15px;
+    }
+    
+    details .card-body {
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 575px) and (max-width: 987px) {
+    div.col-md-6.col-sm-7.center {
+        width: 90%;
+        max-width: 90%;
+        flex: 0 0 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    details summary {
+        padding: 20px 5px;
+        width: 95%;
+        min-width: auto;
+        margin: 15px auto;
+    }
+}
+
