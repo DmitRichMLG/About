@@ -37,6 +37,10 @@
             <img class="icon" src="img/telegram.png" alt="">
             <span class="label">Telegram</span>
         </div>
+        <div class="desktop-icon" data-open="mines">
+            <img class="icon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%3E%3Ccircle%20cx='12'%20cy='12'%20r='6'/%3E%3Cpath%20d='M12%203v18M3%2012h18M6%206l12%2012M18%206L6%2018'%20stroke='%23000'%20stroke-width='2'/%3E%3Crect%20x='9'%20y='9'%20width='3'%20height='3'%20fill='%23fff'/%3E%3C/svg%3E" alt="">
+            <span class="label">Сапёр</span>
+        </div>
     </div>
 
     <!-- ---------------------------- ABOUT ---------------------------- -->
@@ -161,6 +165,41 @@
         </div>
     </section>
 
+    <!-- ---------------------------- MINESWEEPER ---------------------- -->
+    <section class="window hidden" id="win-mines" data-win="mines"
+             style="width:236px; left:430px; top:90px;">
+        <div class="title-bar">
+            <img class="title-bar-icon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%3E%3Ccircle%20cx='12'%20cy='12'%20r='6'/%3E%3Cpath%20d='M12%203v18M3%2012h18M6%206l12%2012M18%206L6%2018'%20stroke='%23000'%20stroke-width='2'/%3E%3Crect%20x='9'%20y='9'%20width='3'%20height='3'%20fill='%23fff'/%3E%3C/svg%3E" alt="">
+            <span class="title-bar-text">Сапёр</span>
+            <div class="title-bar-controls">
+                <button class="btn-min"   data-action="minimize" aria-label="Свернуть"></button>
+                <button class="btn-max"   data-action="maximize" aria-label="Развернуть"></button>
+                <button class="btn-close" data-action="close"    aria-label="Закрыть"></button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span><u>И</u>гра</span><span><u>С</u>правка</span>
+        </div>
+        <div class="window-body">
+            <div class="ms-body">
+                <div class="ms-frame ms-top">
+                    <div class="ms-led" id="ms-mines">010</div>
+                    <button class="ms-face" id="ms-face" aria-label="Новая игра">🙂</button>
+                    <div class="ms-led" id="ms-time">000</div>
+                </div>
+                <div class="ms-frame">
+                    <div class="ms-grid" id="ms-grid"></div>
+                </div>
+                <label class="ms-flagmode">
+                    <input type="checkbox" id="ms-flag-toggle"> режим флажков (для тапа)
+                </label>
+            </div>
+        </div>
+        <div class="status-bar">
+            <span class="field" id="ms-status">Найди все клетки без мин</span>
+        </div>
+    </section>
+
 </div><!-- /desktop -->
 
 <!-- ============================= TASKBAR ============================== -->
@@ -186,11 +225,36 @@
         <div class="start-item" data-open="contact">
             <img class="icon" src="img/telegram.png" alt=""><span>Telegram</span>
         </div>
+        <div class="start-item" data-open="mines">
+            <img class="icon" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%3E%3Ccircle%20cx='12'%20cy='12'%20r='6'/%3E%3Cpath%20d='M12%203v18M3%2012h18M6%206l12%2012M18%206L6%2018'%20stroke='%23000'%20stroke-width='2'/%3E%3Crect%20x='9'%20y='9'%20width='3'%20height='3'%20fill='%23fff'/%3E%3C/svg%3E" alt=""><span>Сапёр</span>
+        </div>
         <div class="start-sep"></div>
         <div class="start-item" data-shutdown>
             <span class="icon glyph glyph-shutdown" aria-hidden="true"></span><span>Завершение работы…</span>
         </div>
     </div>
+</div>
+
+<!-- ======================= MINESWEEPER WIN DIALOG ==================== -->
+<div id="ms-dialog">
+    <section class="window" style="width:300px;">
+        <div class="title-bar">
+            <span class="title-bar-text">Поздравляем!</span>
+            <div class="title-bar-controls">
+                <button class="btn-close" id="ms-dlg-x" aria-label="Закрыть"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="ms-win">
+                <p class="ms-win-emoji">🎉</p>
+                <p>Поле разминировано! Держи скидку<br><b>15% на обучение</b>.</p>
+                <p>Твой промокод:</p>
+                <div class="promo">PIZZA</div>
+                <p class="ms-win-note">Назови его при записи на курс.</p>
+                <button class="btn" id="ms-dlg-ok">ОК</button>
+            </div>
+        </div>
+    </section>
 </div>
 
 <!-- ========================== SHUTDOWN SCREEN ======================== -->

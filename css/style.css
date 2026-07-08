@@ -646,3 +646,142 @@ img { -webkit-user-drag: none; user-drag: none; }
   .task-button { flex-basis: 90px; }
   #tray { padding: 0 6px; }
 }
+
+/* ==========================================================================
+   Minesweeper (Сапёр)
+   ========================================================================== */
+.ms-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+/* sunken frame around the panel and the grid */
+.ms-frame {
+  border: 2px solid var(--w98-white);
+  border-top-color: var(--w98-gray);
+  border-left-color: var(--w98-gray);
+  background: var(--w98-silver);
+  padding: 5px;
+}
+.ms-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ms-led {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1;
+  color: #ff2b2b;
+  background: #000;
+  padding: 2px 4px;
+  min-width: 42px;
+  text-align: right;
+  letter-spacing: 1px;
+  border: 1px solid #000;
+}
+.ms-face {
+  width: 30px;
+  height: 30px;
+  font-size: 17px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--w98-silver);
+  border: 1px solid var(--w98-dark);
+  border-top-color: var(--w98-white);
+  border-left-color: var(--w98-white);
+  box-shadow: inset -1px -1px 0 var(--w98-gray), inset 1px 1px 0 var(--w98-light);
+  cursor: pointer;
+}
+.ms-face:active {
+  border-color: var(--w98-white);
+  border-top-color: var(--w98-dark);
+  border-left-color: var(--w98-dark);
+  box-shadow: inset 1px 1px 0 var(--w98-gray);
+}
+.ms-grid { display: grid; }
+.ms-cell {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: bold 14px/1 "Courier New", monospace;
+  background: var(--w98-silver);
+  border: 2px solid var(--w98-dark);
+  border-top-color: var(--w98-white);
+  border-left-color: var(--w98-white);
+  box-shadow: inset -1px -1px 0 var(--w98-gray), inset 1px 1px 0 var(--w98-light);
+  cursor: pointer;
+}
+.ms-cell.revealed {
+  border: 1px solid #9a9a9a;
+  box-shadow: none;
+  cursor: default;
+}
+.ms-cell.mine.revealed::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%3E%3Ccircle%20cx='12'%20cy='12'%20r='6'/%3E%3Cpath%20d='M12%203v18M3%2012h18M6%206l12%2012M18%206L6%2018'%20stroke='%23000'%20stroke-width='2'/%3E%3Crect%20x='9'%20y='9'%20width='3'%20height='3'%20fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.ms-cell.mine.revealed.boom { background: #ff2b2b; }
+.ms-cell.flag::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid #d40000;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.ms-cell.n1 { color: #0000ff; }
+.ms-cell.n2 { color: #087908; }
+.ms-cell.n3 { color: #ff0000; }
+.ms-cell.n4 { color: #000080; }
+.ms-cell.n5 { color: #800000; }
+.ms-cell.n6 { color: #008080; }
+.ms-cell.n7 { color: #000000; }
+.ms-cell.n8 { color: #808080; }
+.ms-flagmode {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  align-self: center;
+}
+.ms-flagmode input { margin: 0; }
+
+/* win dialog ------------------------------------------------------------- */
+#ms-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 9700;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+}
+#ms-dialog.show { display: flex; }
+#ms-dialog .window { position: relative; max-width: calc(100vw - 24px); }
+.ms-win { text-align: center; padding: 10px 8px 6px; }
+.ms-win p { margin: 0 0 10px; font-size: 12px; line-height: 1.5; }
+.ms-win-emoji { font-size: 30px; margin: 0 0 6px !important; }
+.ms-win-note { font-size: 11px; color: #333; }
+.ms-win .promo {
+  display: inline-block;
+  margin: 2px 0 12px;
+  padding: 5px 16px;
+  font: bold 20px/1 "Courier New", monospace;
+  letter-spacing: 3px;
+  background: #fff;
+  border: 1px solid var(--w98-white);
+  border-top-color: var(--w98-gray);
+  border-left-color: var(--w98-gray);
+  box-shadow: inset 1px 1px 0 #000;
+}
+.ms-win .btn { min-width: 90px; }

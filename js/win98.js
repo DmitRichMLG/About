@@ -24,7 +24,9 @@
   var isMobile = function () { return window.innerWidth <= 640; };
 
   /* ---------------------------------------------------------------- init */
-  document.querySelectorAll(".window").forEach(function (el) {
+  // only manage the real desktop windows — not the win-dialog (which reuses
+  // the .window look but lives outside #desktop)
+  document.querySelectorAll("#desktop .window").forEach(function (el) {
     var id = el.getAttribute("data-win");
     windows[id] = { el: el, taskBtn: null,
                     home: { left: el.style.left, top: el.style.top, width: el.style.width } };
@@ -77,6 +79,12 @@
   function openWindow(id) {
     var w = windows[id];
     if (!w) return;
+    // Сапёр открывается в "фокус-режиме": остальные окна закрываются
+    if (id === "mines") {
+      Object.keys(windows).forEach(function (k) {
+        if (k !== "mines") closeWindow(k);
+      });
+    }
     w.el.classList.remove("hidden");
     layoutWindow(w.el);
     ensureTaskButton(id);
@@ -305,6 +313,142 @@
   shutdown.addEventListener("click", function () {
     shutdown.classList.remove("show");
   });
+
+  /* ---------------------------------------------- Minesweeper (Сапёр) */
+  var msDialog = document.getElementById("ms-dialog");
+  function showWinDialog() { if (msDialog) msDialog.classList.add("show"); }
+  if (msDialog) {
+    ["ms-dlg-ok", "ms-dlg-x"].forEach(function (bid) {
+      var b = document.getElementById(bid);
+      if (b) b.addEventListener("click", function () { msDialog.classList.remove("show"); });
+    });
+    msDialog.addEventListener("click", function (e) {
+      if (e.target === msDialog) msDialog.classList.remove("show");
+    });
+  }
+
+  (function initMines() {
+    var ROWS = 9, COLS = 9, MINES = 10;
+    var gridEl   = document.getElementById("ms-grid");
+    var faceEl   = document.getElementById("ms-face");
+    var minesEl  = document.getElementById("ms-mines");
+    var timeEl   = document.getElementById("ms-time");
+    var statusEl = document.getElementById("ms-status");
+    var flagChk  = document.getElementById("ms-flag-toggle");
+    if (!gridEl) return;
+
+    var cells = [], started = false, over = false;
+    var revealed = 0, flags = 0, timer = 0, timerId = null;
+
+    function pad(n) { n = Math.max(0, Math.min(999, n)); return ("00" + n).slice(-3); }
+    function idx(r, c) { return r * COLS + c; }
+    function inb(r, c) { return r >= 0 && r < ROWS && c >= 0 && c < COLS; }
+    function neighbours(r, c) {
+      var a = [];
+      for (var dr = -1; dr <= 1; dr++)
+        for (var dc = -1; dc <= 1; dc++)
+          if ((dr || dc) && inb(r + dr, c + dc)) a.push(cells[idx(r + dr, c + dc)]);
+      return a;
+    }
+
+    function build() {
+      gridEl.style.gridTemplateColumns = "repeat(" + COLS + ", 22px)";
+      gridEl.textContent = "";
+      cells = [];
+      for (var r = 0; r < ROWS; r++) {
+        for (var c = 0; c < COLS; c++) {
+          var el = document.createElement("div");
+          el.className = "ms-cell";
+          var cell = { mine: false, revealed: false, flagged: false, count: 0, el: el, r: r, c: c };
+          (function (cell) {
+            el.addEventListener("click", function () { onReveal(cell); });
+            el.addEventListener("contextmenu", function (e) { e.preventDefault(); onFlag(cell); });
+          })(cell);
+          gridEl.appendChild(el);
+          cells.push(cell);
+        }
+      }
+    }
+
+    function placeMines(safe) {
+      var placed = 0;
+      while (placed < MINES) {
+        var i = Math.floor(Math.random() * cells.length);
+        if (cells[i].mine || cells[i] === safe) continue;
+        cells[i].mine = true; placed++;
+      }
+      cells.forEach(function (cell) {
+        if (!cell.mine)
+          cell.count = neighbours(cell.r, cell.c).filter(function (n) { return n.mine; }).length;
+      });
+    }
+
+    function startTimer() {
+      timerId = setInterval(function () { timer++; timeEl.textContent = pad(timer); }, 1000);
+    }
+    function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+
+    function reset() {
+      stopTimer();
+      started = over = false; revealed = flags = timer = 0;
+      faceEl.textContent = "🙂";
+      minesEl.textContent = pad(MINES);
+      timeEl.textContent = pad(0);
+      statusEl.textContent = "Найди все клетки без мин";
+      build();
+    }
+
+    function onFlag(cell) {
+      if (over || cell.revealed) return;
+      cell.flagged = !cell.flagged;
+      cell.el.classList.toggle("flag", cell.flagged);
+      flags += cell.flagged ? 1 : -1;
+      minesEl.textContent = pad(MINES - flags);
+    }
+
+    function onReveal(cell) {
+      if (over) return;
+      if (flagChk && flagChk.checked) { onFlag(cell); return; }  // touch flag mode
+      if (cell.flagged || cell.revealed) return;
+      if (!started) { placeMines(cell); startTimer(); started = true; }
+      if (cell.mine) { boom(cell); return; }
+      flood(cell);
+      checkWin();
+    }
+
+    function flood(cell) {
+      if (cell.revealed || cell.flagged) return;
+      cell.revealed = true; revealed++;
+      cell.el.classList.add("revealed");
+      if (cell.count > 0) {
+        cell.el.textContent = cell.count;
+        cell.el.classList.add("n" + cell.count);
+      } else {
+        neighbours(cell.r, cell.c).forEach(function (n) { if (!n.revealed) flood(n); });
+      }
+    }
+
+    function boom(cell) {
+      over = true; stopTimer();
+      faceEl.textContent = "😵";
+      statusEl.textContent = "Бум! Нажми смайлик для новой игры";
+      cells.forEach(function (x) { if (x.mine) x.el.classList.add("revealed", "mine"); });
+      cell.el.classList.add("boom");
+    }
+
+    function checkWin() {
+      if (revealed !== ROWS * COLS - MINES) return;
+      over = true; stopTimer();
+      faceEl.textContent = "😎";
+      statusEl.textContent = "Победа! Промокод PIZZA — скидка 15%";
+      cells.forEach(function (x) { if (x.mine && !x.flagged) x.el.classList.add("flag"); });
+      minesEl.textContent = pad(0);
+      showWinDialog();
+    }
+
+    faceEl.addEventListener("click", reset);
+    reset();
+  })();
 
   /* ----------------------------------------------------------- clock */
   function tick() {
