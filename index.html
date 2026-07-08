@@ -1,121 +1,206 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <meta content="portfolio website " name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Egoshenkov Dmitriy — разработчик и педагог. Личный сайт в стиле Windows 98." name="description">
     <meta content="Egoshenkov Dmitriy https://t.me/dmitriy_i0o" name="author">
-    <meta name="theme-color" content="#1d1e21">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#008080">
     <title>Egoshenkov Dmitriy</title>
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shafarik&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap-grid.css" rel="stylesheet">
-    <style>
-    /* Аварийные стили для мобильных устройств */
-    @media screen and (max-width: 767px) {
-        .card {
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        }
-        .light-mode .card {
-            background-color: rgba(210, 180, 140, 0.2) !important;
-            border: 1px solid rgba(139, 69, 19, 0.2) !important;
-        }
-    }
-    </style>
-
 </head>
 <body>
 
-    <div id="loading">
-        <div id="spinner"></div>
+<!-- ============================ BOOT SPLASH ============================ -->
+<div id="boot">
+    <div class="boot-inner">
+        <div class="cloud"><span>D</span><span>i</span><span>m</span><span>a</span>&nbsp;98</div>
+        <div class="boot-sub">Egoshenkov Dmitriy&nbsp;·&nbsp;загрузка рабочего стола…</div>
+        <div class="boot-bar"><i></i></div>
     </div>
-    <div id="particles-js"></div>
-    <div id="box">
-        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
-        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
-        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
-        <div class="box2 animated bounceOutRight" style="animation-delay:1.9s;"></div>
-        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
-        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+</div>
+
+<!-- ============================== DESKTOP ============================== -->
+<div id="desktop">
+
+    <!-- desktop icons -->
+    <div class="desktop-icons">
+        <div class="desktop-icon" data-open="about">
+            <img class="icon" src="img/i.jpg" alt="">
+            <span class="label">Обо мне</span>
+        </div>
+        <div class="desktop-icon" data-open="courses">
+            <span class="icon glyph glyph-folder" aria-hidden="true"></span>
+            <span class="label">Мои курсы</span>
+        </div>
+        <div class="desktop-icon" data-open="contact">
+            <img class="icon" src="img/telegram.png" alt="">
+            <span class="label">Telegram</span>
+        </div>
     </div>
 
-<button onclick="dayNightToggle()">Toggle dark mode</button>
-<div class="container vertical-center">
-    <div class="row spacing center">
-        <img class="center col-10 col-sm-10 col-lg-5 col-md-5 spacing" src="img/i.jpg">
-        <div class="col-15 col-sm-15 col-lg-12 col-md-12 center spacing">
-            <hr>
-            <h1> i'm Dmitriy </h1>
-            <p class="title-desc center">
-                Я — разработчик с более чем 20 реализованными продуктами и педагог, который уже 4 года помогает школьникам стать юными геймдизайнерами и программистами.
-            <div class="col-md-6 col-sm-7 center">
-                <details>
-                    <summary>Список курсов</summary><br><hr>
-                    <div class="container mt-5">
-                        
-                        <div class="row g-4">
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card h-100 course-card">
-                                    <img src="img/scratch.svg" class="card-img-top" alt="Scratch">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Scratch</h5>
-                                        <p class="card-text">Визуальное программирование для начинающих</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card h-100 course-card">
-                                    <img src="img/roblox.png" class="card-img-top" alt="Roblox Studio">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Roblox Studio</h5>
-                                        <p class="card-text">Разработка игр на платформе Roblox</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="card h-100 course-card">
-                                    <img src="img/web-dev.png" class="card-img-top" alt="Web Development">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Создание сайтов / Web Development</h5>
-                                        <p class="card-text">HTML, CSS, JavaScript и современные фреймворки</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="card h-100 course-card">
-                                    <img src="img/go-backend.png" class="card-img-top" alt="Go Backend">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Backend на Go</h5>
-                                        <p class="card-text">Разработка серверной части на Go</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <script src="js/load.js" type="text/javascript"></script>
-                    <script src="js/details.js" type="text/javascript"></script>
-                    <script src="js/donut.js" type="text/javascript"></script>
-                  </details>
+    <!-- ---------------------------- ABOUT ---------------------------- -->
+    <section class="window" id="win-about" data-win="about"
+             style="width:520px; left:120px; top:48px;">
+        <div class="title-bar">
+            <img class="title-bar-icon" src="img/i.jpg" alt="">
+            <span class="title-bar-text">Обо мне — Egoshenkov Dmitriy</span>
+            <div class="title-bar-controls">
+                <button class="btn-min"    data-action="minimize" aria-label="Свернуть"></button>
+                <button class="btn-max"    data-action="maximize" aria-label="Развернуть"></button>
+                <button class="btn-close"  data-action="close"    aria-label="Закрыть"></button>
             </div>
         </div>
+        <div class="menu-bar">
+            <span><u>Ф</u>айл</span><span><u>П</u>равка</span><span><u>В</u>ид</span><span><u>С</u>правка</span>
+        </div>
+        <div class="window-body">
+            <div class="about-grid">
+                <div class="about-photo raised">
+                    <img src="img/i.jpg" alt="Egoshenkov Dmitriy">
+                </div>
+                <div class="about-text">
+                    <h1>i'm Dmitriy</h1>
+                    <p class="subtitle">Разработчик&nbsp;· педагог&nbsp;· геймдизайнер</p>
+                    <p class="bio">
+                        Я — разработчик с более чем 20 реализованными продуктами
+                        и педагог, который уже 4 года помогает школьникам стать
+                        юными геймдизайнерами и программистами.
+                    </p>
+                    <div class="about-actions">
+                        <button class="btn" data-open="courses">Список курсов…</button>
+                        <button class="btn" data-open="contact">Написать в Telegram</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="status-bar">
+            <span class="field">Готово</span>
+            <span class="field small">20+ продуктов</span>
+            <span class="field small">4 года преподавания</span>
+        </div>
+    </section>
+
+    <!-- ---------------------------- COURSES -------------------------- -->
+    <section class="window hidden" id="win-courses" data-win="courses"
+             style="width:560px; left:220px; top:150px;">
+        <div class="title-bar">
+            <span class="icon glyph glyph-folder title-bar-icon" aria-hidden="true"></span>
+            <span class="title-bar-text">Мои курсы</span>
+            <div class="title-bar-controls">
+                <button class="btn-min"   data-action="minimize" aria-label="Свернуть"></button>
+                <button class="btn-max"   data-action="maximize" aria-label="Развернуть"></button>
+                <button class="btn-close" data-action="close"    aria-label="Закрыть"></button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <span><u>Ф</u>айл</span><span><u>П</u>равка</span><span><u>В</u>ид</span><span><u>С</u>правка</span>
+        </div>
+        <div class="window-body">
+            <div class="courses-list">
+                <div class="course-item">
+                    <img class="course-icon" src="img/scratch.svg" alt="Scratch">
+                    <div class="course-info">
+                        <div class="course-title">Scratch</div>
+                        <div class="course-desc">Визуальное программирование для начинающих</div>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <img class="course-icon" src="img/roblox.png" alt="Roblox Studio">
+                    <div class="course-info">
+                        <div class="course-title">Roblox Studio</div>
+                        <div class="course-desc">Разработка игр на платформе Roblox</div>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <img class="course-icon" src="img/web-dev.png" alt="Web Development">
+                    <div class="course-info">
+                        <div class="course-title">Создание сайтов</div>
+                        <div class="course-desc">HTML, CSS, JavaScript и современные фреймворки</div>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <img class="course-icon" src="img/go-backend.png" alt="Go Backend">
+                    <div class="course-info">
+                        <div class="course-title">Backend на Go</div>
+                        <div class="course-desc">Разработка серверной части на Go</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="status-bar">
+            <span class="field">Объектов: 4</span>
+            <span class="field small">Выберите курс</span>
+        </div>
+    </section>
+
+    <!-- ---------------------------- CONTACT -------------------------- -->
+    <section class="window hidden" id="win-contact" data-win="contact"
+             style="width:320px; left:360px; top:120px;">
+        <div class="title-bar">
+            <img class="title-bar-icon" src="img/telegram.png" alt="">
+            <span class="title-bar-text">Связаться</span>
+            <div class="title-bar-controls">
+                <button class="btn-min"   data-action="minimize" aria-label="Свернуть"></button>
+                <button class="btn-max"   data-action="maximize" aria-label="Развернуть"></button>
+                <button class="btn-close" data-action="close"    aria-label="Закрыть"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="contact-body">
+                <img class="tg-avatar" id="tg-avatar" src="img/telegram.png" alt="Telegram">
+                <h2>Напишите мне</h2>
+                <p>Вопросы по курсам, проектам и сотрудничеству —<br>
+                   пишите напрямую в Telegram:</p>
+                <p class="handle">@dmitriy_i0o</p>
+                <button class="btn" data-link="https://t.me/dmitriy_i0o">Открыть Telegram</button>
+            </div>
+        </div>
+        <div class="status-bar">
+            <span class="field">t.me/dmitriy_i0o</span>
+        </div>
+    </section>
+
+</div><!-- /desktop -->
+
+<!-- ============================= TASKBAR ============================== -->
+<div id="taskbar">
+    <div id="start-button">
+        <span class="win-flag"><i class="q1"></i><i class="q2"></i><i class="q3"></i><i class="q4"></i></span>
+        Пуск
     </div>
+    <div id="taskbar-tasks"></div>
+    <div id="tray"><span id="clock">12:00</span></div>
 </div>
-<div class="container" style="padding: 0; margin: 0 auto; width: 100%; text-align: center;">
-    <div class="row" style="margin: 0; padding: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
-        <div class="col-12 d-flex justify-content-center" style="width: 100%; padding: 0; margin: 0 auto;">
-            <div id="social-list"></div>
+
+<!-- ============================ START MENU ============================ -->
+<div id="start-menu" class="hidden">
+    <div class="start-sidebar"><b>Dima</b> <span class="thin">98</span></div>
+    <div class="start-items">
+        <div class="start-item" data-open="about">
+            <img class="icon" src="img/i.jpg" alt=""><span>Обо мне</span>
+        </div>
+        <div class="start-item" data-open="courses">
+            <span class="icon glyph glyph-folder" aria-hidden="true"></span><span>Мои курсы</span>
+        </div>
+        <div class="start-item" data-open="contact">
+            <img class="icon" src="img/telegram.png" alt=""><span>Telegram</span>
+        </div>
+        <div class="start-sep"></div>
+        <div class="start-item" data-shutdown>
+            <span class="icon glyph glyph-shutdown" aria-hidden="true"></span><span>Завершение работы…</span>
         </div>
     </div>
 </div>
 
-<script src="js/load.js" type="text/javascript"></script>
+<!-- ========================== SHUTDOWN SCREEN ======================== -->
+<div id="shutdown-screen">
+    <div>
+        <div class="msg">Теперь питание компьютера<br>можно отключить.</div>
+        <div class="hint">Щёлкните мышью, чтобы вернуться</div>
+    </div>
+</div>
+
+<script src="js/win98.js"></script>
 </body>
 </html>
-
