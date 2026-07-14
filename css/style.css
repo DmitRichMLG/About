@@ -378,9 +378,22 @@ img { -webkit-user-drag: none; user-drag: none; }
 }
 .contact-body h2 { margin: 0 0 6px; font-size: 16px; }
 .contact-body p  { margin: 0 0 14px; font-size: 12px; }
-.contact-body .handle {
-  font-family: "Courier New", monospace;
-  font-weight: bold;
+.contact-choice {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.contact-btn img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
 /* ==========================================================================
